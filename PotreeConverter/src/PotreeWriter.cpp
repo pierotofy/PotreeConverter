@@ -403,7 +403,7 @@ PotreeWriter::PotreeWriter(string workDir, AABB aabb, float spacing, int maxDept
 	this->pointAttributes = pointAttributes;
 
 	if(this->scale == 0){
-		if(aabb.size.length() > 1'000'000){
+		if(aabb.size.length() > 1000000){
 			this->scale = 0.1;
 		}else if(aabb.size.length() > 1000){
 			this->scale = 0.01;
@@ -455,7 +455,7 @@ void PotreeWriter::add(Point &p){
 	store.push_back(p);
 	numAdded++;
 
-	if(store.size() > 10'000){
+	if(store.size() > 10000){
 		processStore();
 	}
 }
@@ -492,7 +492,7 @@ void PotreeWriter::flush(){
 
 	//auto end = high_resolution_clock::now();
 	//long long duration = duration_cast<milliseconds>(end-start).count();
-	//float seconds = duration / 1'000.0f;
+	//float seconds = duration / 1000.0f;
 	//cout << "flush nodes: " << seconds << "s" << endl;
 
 	{// update cloud.js
@@ -563,7 +563,7 @@ void PotreeWriter::flush(){
 	
 		//auto end = high_resolution_clock::now();
 		//long long duration = duration_cast<milliseconds>(end-start).count();
-		//float seconds = duration / 1'000.0f;
+		//float seconds = duration / 1000.0f;
 		//cout << "writing hierarchy: " << seconds << "s" << endl;
 	
 	}
