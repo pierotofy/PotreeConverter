@@ -608,7 +608,7 @@ void PotreeWriter::loadStateFromDisk(){
 		
 			}
 		}
-		std::sort(hrcPaths.begin(), hrcPaths.end(), [](string &a, string &b){
+		std::sort(hrcPaths.begin(), hrcPaths.end(), [](const string &a, const string &b){
 			return a.size() < b.size();
 		});
 
